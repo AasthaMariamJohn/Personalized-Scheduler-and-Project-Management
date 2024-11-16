@@ -3,15 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Personalized-Scheduler-and-Project-Management documentation
-===========================================================
+Welcome to the Personalized Scheduler and Project Management documentation!
+===================================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+This is the main documentation page for the **Personalized Scheduler and Project Management** library.
 
-
+Contents:
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   getting_started
+   installation
+   usage
+   examples
+
+Indices and tables
+===================
+* :ref:`genindex`
+* :ref:`search`

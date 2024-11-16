@@ -7,7 +7,7 @@ This project provides a personalized scheduler and project management tool using
 - **src/**: This folder contains supporting `.csv` data files used for project management tasks.
 
 ## How to Use
-1. Open `PSP_Project.ipynb` in [Google Colab](https://colab.research.google.com/) or your local Jupyter Notebook environment.
+1. Open `PSP_Project.ipynb` in [Google Colab](https://colab.research.google.com/drive/1OFj5Gn-G8vCuNH3oVA6L2J8skDVv0wIg?usp=sharing) or your local Jupyter Notebook environment.
 2. Upload the `.csv` files from the `src` directory when prompted (if necessary).
 
 ## Documentation

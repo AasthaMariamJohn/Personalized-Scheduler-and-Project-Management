@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
-<html lang="Python" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Personalized-Scheduler-and-Project-Management documentation &#8212; Personalized-Scheduler-and-Project-Management 15/11/24 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalized-Scheduler-and-Project-Management Documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -14,92 +12,110 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  </head>
 
-  
-  
-
-  </head><body>
-  
-
+  <body>
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
-            
-  <section id="personalized-scheduler-and-project-management-documentation">
-<h1>Personalized-Scheduler-and-Project-Management documentation<a class="headerlink" href="#personalized-scheduler-and-project-management-documentation" title="Link to this heading">¶</a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+            <section id="personalized-scheduler-and-project-management-documentation">
+              <h1>Personalized-Scheduler-and-Project-Management Documentation</h1>
+              <p>Welcome to the documentation for the Personalized-Scheduler-and-Project-Management system. This system allows users to configure and visualize personal schedules and project management timelines.</p>
 
+              <h2>Modules Overview</h2>
+              <ul>
+                <li><a href="#personal-schedule">Personal Schedule</a></li>
+                <li><a href="#project-schedule">Project Schedule</a></li>
+                <li><a href="#utility-functions">Utility Functions</a></li>
+                <li><a href="#project-management">Project Management</a></li>
+                <li><a href="#task-management-widgets">Task Management Widgets</a></li>
+              </ul>
 
+              <h2 id="personal-schedule">Personal Schedule</h2>
+              <p><strong>personal_schedule()</strong></p>
+              <p>Displays the personal schedule module where users can configure their daily schedule. The user is prompted to input a time block interval, such as "1 hour," for each block in the schedule. Additionally, rest hours, like "11:00 PM to 7:00 AM," and meal times such as breakfast at "8:00 AM" are inputted. Once the user provides this information, the module displays the schedule for the day with designated meal and rest times.</p>
+
+              <h2 id="project-schedule">Project Schedule</h2>
+              <p><strong>project_schedule()</strong></p>
+              <p>Displays the project schedule module, where users can configure and visualize tasks for a project. Users can add tasks with details such as the task name, start date, duration, the person assigned to the task, and completion status. The project schedule is then displayed, and users can generate a Gantt chart to visualize task timelines and their progress.</p>
+
+              <h2 id="utility-functions">Utility Functions</h2>
+              <h3>Constants</h3>
+              <ul>
+                <li><strong>TIME_BLOCK_INTERVAL</strong>: Specifies the duration for each block in the personal schedule. Default is "1 hour" but can be adjusted to "30 minutes", "45 minutes", etc.</li>
+                <li><strong>REST_HOURS</strong>: A tuple defining the start and end time for the rest period (e.g., ("12:00 AM", "6:00 AM")).</li>
+                <li><strong>MEAL_TIMES</strong>: A dictionary specifying the times for breakfast, lunch, and dinner.</li>
+              </ul>
+
+              <h3>get_closest_time_idx(timetable_df, target_time)</h3>
+              <p>This helper function takes a timetable DataFrame and a target time as input. It returns the index of the closest time in the timetable that matches the given target time. This is useful for assigning activities to the correct time slots.</p>
+
+              <h3>load_and_display_options()</h3>
+              <p>Loads the saved timetable and project data from CSV files. It displays two buttons that allow users to view their daily or weekly timetable. If no files are found, an error message is displayed.</p>
+
+              <h3>generate_daily_timetable(weekly_events, projects)</h3>
+              <p>Generates a daily timetable by first setting up the structure for the day's schedule, marking rest hours, and meal times. It then populates the timetable with events and assigns tasks to available free time. The final timetable is displayed in a bar chart format.</p>
+
+              <h3>generate_weekly_timetable(weekly_events, projects)</h3>
+              <p>Generates a weekly timetable, displaying repeating events and tasks due on each day of the week. It compares event days and deadlines with the current date to display relevant information for the user.</p>
+
+              <h3>plot_timetable(timetable_df, today_day)</h3>
+              <p>Plots the timetable for a given day using a horizontal bar chart. The different activities (e.g., "Free Time", "Rest", "Breakfast") are represented with different colors, and the timetable is displayed with times on the vertical axis.</p>
+
+              <h2 id="project-management">Project Management</h2>
+
+              <h3>manage_projects()</h3>
+              <p>This function creates or loads project files using a graphical user interface (GUI). Users can manage their projects by either creating a new project or loading an existing project file. The project is saved in CSV format, with columns such as "Task", "Start", "Duration", "Assigned To", "Priority", "Description", "Dependencies", "Deadline", "Milestone", "Estimated Hours", "Actual Hours", "Comments", and "Completed". If a project is created, an empty file with these headers is generated.</p>
+
+              <h3>load_tasks_from_file()</h3>
+              <p>This function loads the tasks from the active project file. If the project file exists, it is loaded into a DataFrame, and the task dropdown menu and progress bar are updated. If the project file does not exist or is invalid, an empty DataFrame is initialized.</p>
+
+              <h3>update_task_dropdown()</h3>
+              <p>This function updates the task dropdown menu with available task names from the project file. The dropdown will allow users to select existing tasks or add new ones. The dropdown options are dynamically updated whenever a task is added or loaded.</p>
+
+              <h3>on_task_select(change)</h3>
+              <p>This function is triggered when a task is selected from the dropdown. It will either autofill the task details if an existing task is selected or clear the task fields if the "Add New Task" option is chosen.</p>
+
+              <h3>autofill_task_details(task_details)</h3>
+              <p>This function automatically fills in the details of a task in the form fields when a task is selected from the dropdown. The fields populated include task name, start date, duration, assigned person, priority, description, dependencies, deadline, milestone, estimated hours, actual hours, and comments.</p>
+
+              <h3>calculate_deadline(task_details)</h3>
+              <p>This function calculates the deadline of a task by adding the task duration (in days) to the start date. It is used to auto-complete the deadline for new tasks.</p>
+
+              <h3>clear_task_fields()</h3>
+              <p>This function clears the input fields, allowing the user to start fresh when adding a new task. It resets all form inputs to their default values.</p>
+
+              <h3>save_task_data(b)</h3>
+              <p>This function saves the task data to the project file. If the task already exists, its details are updated; otherwise, the task is added as a new entry in the project file. After saving, the tasks are reloaded, and the progress bar is updated.</p>
+
+              <h3>update_progress_bar()</h3>
+              <p>This function updates the progress bar based on the completion status of tasks. It calculates the percentage of completed tasks and updates the progress bar accordingly.</p>
+
+              <h2 id="task-management-widgets">Task Management Widgets</h2>
+              <p>The following widgets allow users to input task details, select task dependencies, and manage progress:</p>
+              <ul>
+                <li><strong>task_dropdown</strong>: Dropdown for selecting a task.</li>
+                <li><strong>task_name_input</strong>: Input field for entering the task name.</li>
+                <li><strong>start_date_input</strong>: DatePicker for selecting the task start date.</li>
+                <li><strong>duration_input</strong>: Integer input for entering the task duration in days.</li>
+                <li><strong>assigned_to_input</strong>: Dropdown for selecting the person assigned to the task.</li>
+                <li><strong>task_priority_input</strong>: Dropdown for selecting the task priority (Low, Medium, High).</li>
+                <li><strong>task_description_input</strong>: Textarea for entering a task description.</li>
+                <li><strong>task_dependency_input</strong>: SelectMultiple widget for choosing task dependencies.</li>
+                <li><strong>task_deadline_input</strong>: DatePicker for selecting the task deadline.</li>
+                <li><strong>milestone_input</strong>: Checkbox for marking the task as a milestone.</li>
+                <li><strong>estimated_hours_input</strong>: Integer input for entering estimated hours for the task.</li>
+                <li><strong>actual_hours_input</strong>: Integer input for entering actual hours spent on the task.</li>
+                <li><strong>task_comments_input</strong>: Textarea for entering additional comments about the task.</li>
+                <li><strong>save_button</strong>: Button for saving the task data.</li>
+                <li><strong>progress_bar</strong>: Progress bar for displaying task completion status.</li>
+              </ul>
+            </section>
           </div>
-          
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">Personalized-Scheduler-and-Project-Management</a></h1>
-
-
-
-
-
-
-
-
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
     </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2024, Aastha Mariam John.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
   </body>
 </html>

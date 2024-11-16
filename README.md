@@ -1,4 +1,3 @@
-readme_content = """
 # Personalized Scheduler and Project Management
 
 This project provides a personalized scheduler and project management tool using Python and Jupyter Notebook. It is designed to help with managing tasks, scheduling, and project management through an interactive and user-friendly interface.
@@ -17,5 +16,3 @@ Comprehensive documentation is provided in the `docs/` folder, generated using S
 - API references (if applicable)
 - Project architecture and workflow
 
-## Installation (Optional)
-To use this as a Python library (if converted):

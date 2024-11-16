@@ -30,14 +30,17 @@ This project is a **Python-based personalized scheduler and project management t
 ## Example Outputs
 ### 1. **Daily Timetable**
 Visualize your personalized daily timetable with scheduled activities, meal times, and rest periods.
+
 ![image](https://github.com/user-attachments/assets/18bb3244-0eaa-4f7a-acf8-19a47bbc6e00)
 
 ### 2. **Weekly Timetable**
 View recurring events and tasks distributed across the week.
+
 ![image](https://github.com/user-attachments/assets/474f6a2a-3c5d-48dd-a0a0-ee28b949af68)
 
 ### 3. **Project Gantt Chart**
 Analyze project progress with a Gantt chart showing task timelines and statuses.
+
 ![image](https://github.com/user-attachments/assets/1b6d2b2f-8721-4a60-9f5b-ebff302a9a29)
 
 ---

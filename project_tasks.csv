@@ -1,0 +1,9 @@
+Task,Start,Duration,Assigned To,Completed
+Ideation,2023-12-01,10,A,True
+Research,2023-12-11,15,B,False
+Data Collection,2023-12-11,30,C,False
+Model Development,2024-01-25,40,A,False
+Model Testing,2024-03-06,30,B,False
+Results Evaluation,2024-04-05,15,A,False
+Deployment,2024-04-20,20,C,False
+Final Report,2024-05-10,20,B,False
